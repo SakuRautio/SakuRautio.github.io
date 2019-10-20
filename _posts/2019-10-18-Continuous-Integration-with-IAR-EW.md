@@ -1398,6 +1398,10 @@ However, as I'm piss poor and a miser, I can't be bothered to buy an access to s
 
 I hope this guide will, for someone, make more cents than my life.
 
+---
+
+You can find the source code related to this blog post on [GitHub](https://github.com/SakuRautio/iar_dev_board)
+
 [Debug config]: /assets/images/debug_config.png
 [Build actions]: /assets/images/build_actions.png
 [Output converter]: /assets/images/output_converter.png
