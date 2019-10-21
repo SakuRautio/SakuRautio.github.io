@@ -548,8 +548,6 @@ The configuration file includes things like IAR tools paths and configs for the 
 ```JSON
 {
   "IAR_BUILD_PATH": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\common\\bin\\IarBuild.exe",
-  "IAR_CSTAT_PATH": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\arm\\bin\\icstat.exe",
-  "IAR_CSPY_PATH": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\common\\bin\\CSpyBat.exe",
   "Build backup path": "C:\\Builds",
   "Configurations": [
     "Debug",
@@ -853,7 +851,6 @@ With that done, let's modify our *config.json*.
 ```json
 {
   "IAR_BUILD_PATH": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\common\\bin\\IarBuild.exe",
-  "IAR_CSPY_PATH": "C:\\Program Files (x86)\\IAR Systems\\Embedded Workbench 8.3\\common\\bin\\CSpyBat.exe",
   "Build backup path": "C:\\Builds",
   "Configurations": [
     "Debug",
@@ -890,6 +887,9 @@ And since the IAR Embedded Workbench provides us with a very nice simulator, eve
 
 To make things easier, we will create a configuration for our project called as *UnitTest* and then replace the *DEBUG* define in the preprocessor settings of the project with *UNIT_TEST*.   
 ![Unit test config][]
+
+Make sure to use the full DLib for this configuration and set low-level interface implementation as *semihosted*.   
+![Unit test config2][]
 
 This way, we can isolate our program to only run the unit tests and not run indefinately (essentially the CSPY program would never stop and it would be of no use to us).   
 CSPY also allows us to use the terminal I/O but in this case, the prints will be routed to STDOUT, meaning that we can read the prints with a script.
@@ -1406,4 +1406,4 @@ You can find the source code related to this blog post on [GitHub](https://githu
 [Build actions]: /assets/images/build_actions.png
 [Output converter]: /assets/images/output_converter.png
 [Unit test config]: /assets/images/unit_test_config.png
-
+[Unit test config2]: /assets/images/unit_test_config.png
